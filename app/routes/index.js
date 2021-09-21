@@ -6,4 +6,5 @@ module.exports.init = function (app) {
     app.post('/cache/:key', CacheController.createOrUpdateCache);
     app.put('/cache/:key', CacheController.createOrUpdateCache);
     app.delete('/cache/:key', CacheController.deleteCache);
+    app.delete('/cache', CacheController.deleteAllCache);
 }

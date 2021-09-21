@@ -48,9 +48,14 @@ const deleteCache = async (key) => {
     return await models.Cache.deleteOne({ key });
 }
 
+const deleteAllCache = async () => {
+    return await models.Cache.deleteMany();
+}
+
 module.exports = {
     listAll,
     getCache,
     createOrUpdateCache,
-    deleteCache
+    deleteCache,
+    deleteAllCache
 }

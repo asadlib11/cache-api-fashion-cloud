@@ -59,9 +59,23 @@ const deleteCache = async (req, res) => {
     }
 }
 
+const deleteAllCache = async (req, res) => {
+    try {
+        const result = await cacheService.deleteAllCache();
+        const message = (result.deletedCount > 0) ? 'All cache keys have been deleted successfully' : 'No Cache keys found';
+        const status = (result.deletedCount > 0) ? 200 : 404;
+        res.status(status).send({
+            message
+        });
+    } catch (err) {
+        res.status(400).send("Unexpected error occurred, Error: ", err);
+    }
+}
+
 module.exports = {
     listAll,
     getCache,
     createOrUpdateCache,
-    deleteCache
+    deleteCache,
+    deleteAllCache
 }
