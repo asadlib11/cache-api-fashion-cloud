@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "eceff682-089a-40b5-859b-34bbf2c8089e",
+		"name": "CacheApi-FashionCloud",
+		"description": "This collection contains all the requests for fashion cloud cache api server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all Cache keys",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cache",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cache"
+					]
+				},
+				"description": "Gets all cache keys stored in database"
+			},
+			"response": []
+		},
+		{
+			"name": "Get a cache key",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cache/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cache",
+						"1"
+					]
+				},
+				"description": "This api gets a specific cache key stored in database"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a cache key",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"creating the cache api server for fashion cloud\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cache/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cache",
+						"2"
+					]
+				},
+				"description": "This api creates a cache key and stores in database"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a cache key",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"creating the cache api server for fashion cloud updated\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cache/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cache",
+						"2"
+					]
+				},
+				"description": "This api updates a cache key and stores in database"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a cache key",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cache/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cache",
+						"2"
+					]
+				},
+				"description": "Deletes a cache key stored in database"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete all cache keys",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cache",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cache"
+					]
+				},
+				"description": "Deletes all cache keys stored in database"
+			},
+			"response": []
+		}
+	]
+}
