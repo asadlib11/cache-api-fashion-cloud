@@ -8,7 +8,7 @@ const listAll = async(req, res) => {
         }
         return res.status(200).send(keys);
     } catch (err) {
-        res.status(400).send("Unexpected error occurred, Error: ", err);
+        res.status(500).send("Unexpected error occurred, Error: ", err);
     }
 }
 
@@ -22,7 +22,7 @@ const getCache = async(req, res) => {
             data: cache.content
         });
     } catch (err) {
-        res.status(400).send("Unexpected error occurred, Error: ", err);
+        res.status(500).send("Unexpected error occurred, Error: ", err);
     }
 }
 
@@ -41,7 +41,7 @@ const createOrUpdateCache = async (req, res) => {
             data: content
         });
     } catch (err) {
-        res.status(400).send("Unexpected error occurred, Error: ", err);
+        res.status(500).send("Unexpected error occurred, Error: ", err);
     }
 }
 
@@ -55,7 +55,7 @@ const deleteCache = async (req, res) => {
             message
         });
     } catch (err) {
-        res.status(400).send("Unexpected error occurred, Error: ", err);
+        res.status(500).send("Unexpected error occurred, Error: ", err);
     }
 }
 
@@ -68,7 +68,7 @@ const deleteAllCache = async (req, res) => {
             message
         });
     } catch (err) {
-        res.status(400).send("Unexpected error occurred, Error: ", err);
+        res.status(500).send("Unexpected error occurred, Error: ", err);
     }
 }
 
