@@ -2,7 +2,7 @@
   "name": "cache-api-fashion-cloud",
   "version": "1.0.0",
   "description": "REST API that helps building and interacting with cache",
-  "main": "index.js",
+  "main": "app/app.js",
   "scripts": {
     "test": "mocha app/test",
     "start": "node app/app.js",
