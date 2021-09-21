@@ -1,6 +1,6 @@
 # Cache API - Fashion Cloud
 
-Cache API is aa REST API that exposes methods to interact with a cache that gets stored in the db.
+Cache API is a REST API that exposes methods to interact with a cache that gets stored in the db.
 Provided operations in this server are fetch, add, update, remove and remove all. You can perform these api calls using Postman collection provided in the project.
 
 # Configurations:

@@ -4,7 +4,8 @@
 		"autoReconnect": true,
 		"autoRemove": "native",
 		"autoRemoveInterval": 10,
-		"seed": true
+		"seed": true,
+		"ttl": 86400
 	},
 	"cache": {
 		"maxLimit": 3
