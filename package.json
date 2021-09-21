@@ -1,0 +1,27 @@
+{
+  "name": "cache-api-fashion-cloud",
+  "version": "1.0.0",
+  "description": "REST API that helps building and interacting with cache",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app/app.js",
+    "dev": "nodemon app/app.js"
+  },
+  "author": "Asad Ali Baloch",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "eslint": "^7.32.0",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.2",
+    "mongoose": "^6.0.7"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.21",
+    "mocha": "^9.1.1",
+    "nodemon": "^2.0.12",
+    "should": "^13.2.3",
+    "supertest": "^6.1.6"
+  }
+}
