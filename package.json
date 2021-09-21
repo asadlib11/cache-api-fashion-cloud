@@ -4,7 +4,7 @@
   "description": "REST API that helps building and interacting with cache",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha app/test",
     "start": "node app/app.js",
     "dev": "nodemon app/app.js"
   },
