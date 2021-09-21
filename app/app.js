@@ -15,6 +15,8 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
+// calling routes 
+require('./routes').init(app);
 
 const server = app.listen(app.get('port'), async function() {
 	console.info('Express server connected on port ' + server.address().port);
