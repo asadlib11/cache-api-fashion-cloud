@@ -12,7 +12,21 @@ const listAll = async(req, res) => {
     }
 }
 
+const getCache = async(req, res) => {
+    try {
+        const key = req.params.key;
+        let cache = await cacheService.getCache(key);
+
+        res.status(200).send({
+            message: cache.message,
+            data: cache.content
+        });
+    } catch (err) {
+        res.status(400).send("Unexpected error occurred, Error: ", err);
+    }
+}
 
 module.exports = {
-    listAll
+    listAll,
+    getCache
 }
