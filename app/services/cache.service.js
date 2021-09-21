@@ -44,8 +44,13 @@ const createOrUpdateCache = async (key, content) => {
     }
 }
 
+const deleteCache = async (key) => {
+    return await models.Cache.deleteOne({ key });
+}
+
 module.exports = {
     listAll,
     getCache,
-    createOrUpdateCache
+    createOrUpdateCache,
+    deleteCache
 }
