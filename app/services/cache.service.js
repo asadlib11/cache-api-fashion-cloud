@@ -1,6 +1,5 @@
 const models = require('../models');
 const crypto = require("crypto");
-const { model } = require('mongoose');
 
 const listAll = async () => {
     return await models.Cache.find();
@@ -12,7 +11,7 @@ const getCache = async (key) => {
     if (cache) {
         if (Date.parse(cache.modifiedAt) + (cache.ttl * 1000) < Date.now()) {
             cache.content = crypto.randomBytes(20).toString('hex');
-            cache.save();
+            await cache.save();
             message = 'Cache miss'
         } else {
             message = 'Cache hit';
@@ -31,7 +30,22 @@ const getCache = async (key) => {
     };
 }
 
+const createOrUpdateCache = async (key, content) => {
+    let cache = await models.Cache.findOne({ key });
+    if (cache) {
+        cache.content = content;
+        cache.modifiedAt = new Date();
+        await cache.save();
+    } else {
+        cache = models.Cache.create({
+            key,
+            content
+        });
+    }
+}
+
 module.exports = {
     listAll,
-    getCache
+    getCache,
+    createOrUpdateCache
 }

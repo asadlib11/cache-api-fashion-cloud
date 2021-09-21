@@ -26,7 +26,27 @@ const getCache = async(req, res) => {
     }
 }
 
+const createOrUpdateCache = async (req, res) => {
+    if (!req.body.content) {
+        return res.status(400).send({
+            message: 'Bad request: Parameter content is required'
+        });
+    }
+    try {
+        const key = req.params.key;
+        const { content } = req.body;
+        await cacheService.createOrUpdateCache(key, content);
+        res.status(200).send({
+            message: 'Content has been successfully added in db.',
+            data: content
+        });
+    } catch (err) {
+        res.status(400).send("Unexpected error occurred, Error: ", err);
+    }
+}
+
 module.exports = {
     listAll,
-    getCache
+    getCache,
+    createOrUpdateCache
 }
